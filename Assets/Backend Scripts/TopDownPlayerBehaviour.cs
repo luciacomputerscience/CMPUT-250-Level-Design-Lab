@@ -94,10 +94,6 @@ public class TopDownPlayerBehaviour : TopDownEntityBehaviour
         base.Start();
         _attackCountdown = attackCooldown;
 
-        // reset the room if we aren't using the connective wrapper
-        if (SceneManager.sceneCount == 1){
-            PlayerPrefs.DeleteAll();
-        }
         
         if (!PlayerPrefs.HasKey("keys")){
             PlayerPrefs.SetInt("keys", 0);
