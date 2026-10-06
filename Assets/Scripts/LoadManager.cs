@@ -13,4 +13,11 @@ public class LoadManager : MonoBehaviour
     {
         
     }
+
+    void Update()
+    {
+        if(Input.GetKey(KeyCode.M)){
+             SceneManager.LoadScene("BasicMenu");
+        }
+    }
 }

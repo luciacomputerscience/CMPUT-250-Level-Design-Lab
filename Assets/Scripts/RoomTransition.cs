@@ -8,7 +8,6 @@ public class RoomTransition : MonoBehaviour
     public string SceneToTransitionTo = "";
 
 
-    // called when the cube hits the floor
     void OnTriggerEnter2D(Collider2D col)
     {
         TopDownPlayerBehaviour player = col.gameObject.GetComponent<TopDownPlayerBehaviour>();
