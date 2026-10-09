@@ -11,17 +11,18 @@ public class RoomTransition : MonoBehaviour
     void OnTriggerEnter2D(Collider2D col)
     {
         TopDownPlayerBehaviour player = col.gameObject.GetComponent<TopDownPlayerBehaviour>();
-        if(player!=null){
 
-            if(SceneToTransitionTo!=""){
+        if (player != null)
+        {
+            if (SceneToTransitionTo != "")
+            {
                 //Get Time 
-                //TopDownUITimeBehaviour timescript = Object.FindObjectOfType<TopDownUITimeBehaviour>();
+                TopDownUITimeBehaviour timescript = Object.FindObjectOfType<TopDownUITimeBehaviour>();
+                PlayerPrefs.SetFloat("time", timescript.time);
 
-                //PlayerPrefs.SetString("currentLevel", ??? );
+                PlayerPrefs.SetString("currentLevel", SceneToTransitionTo);
                 SceneManager.LoadScene(SceneToTransitionTo);
             }
         }
     }
-
-
 }

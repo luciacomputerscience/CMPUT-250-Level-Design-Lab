@@ -11,13 +11,20 @@ public class LoadManager : MonoBehaviour
     // Start is called before the first frame update
     void Awake()
     {
-        
+        TopDownUITimeBehaviour timescript = Object.FindObjectOfType<TopDownUITimeBehaviour>();
+        timescript.time = PlayerPrefs.GetFloat("time");
+
+        if (SceneManager.GetActiveScene().name == "Intro Level"){
+            timescript.time = 0f;
+            PlayerPrefs.SetFloat("time", timescript.time);
+        }
     }
 
     void Update()
     {
-        if(Input.GetKey(KeyCode.M)){
-             SceneManager.LoadScene("BasicMenu");
+        if (Input.GetKey(KeyCode.M))
+        {
+            SceneManager.LoadScene("BasicMenu");
         }
     }
 }

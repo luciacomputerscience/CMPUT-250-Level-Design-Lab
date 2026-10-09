@@ -7,6 +7,6 @@ public class BasicMenuButton : MonoBehaviour
 {
     
     public void StartGame(){
-         //PlayerPrefs.GetString("currentLevel");
+        SceneManager.LoadScene(PlayerPrefs.GetString("currentLevel"));
     }
 }
